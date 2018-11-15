@@ -1,9 +1,9 @@
 var rains = [100];
 
 function setup() {
-	createCanvas(900, 700);
-	
-	for (let i = 0; i < 100; i++) {
+	createCanvas(windowWidth, windowHeight);
+
+	for (let i = 0; i < rains.length; i++) {
 		rains[i] = new Rain();
 	}
 }
@@ -14,6 +14,13 @@ function draw() {
 	for (let i = 0; i < rains.length; i++) {
 		rains[i].update();
 		rains[i].show();
-		rains[i].dropped();
+
+		if (rains[i].dropped()) {
+			rains.splice(i, 1);
+		}
+	}
+
+	if (frameCount / 30) {
+		rains.push(new Rain());
 	}
 }
