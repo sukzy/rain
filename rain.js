@@ -4,12 +4,12 @@ class Rain {
     this.x = random(0, width);
     this.y = random(-height, 0);
 
-    this.vel = 12;
-    this.gravity = 0.2;
+    this.vel = 6;
+    this.gravity = 0.3;
   }
 
   reset() {
-    // this.vel = 0;
+    this.vel = 0;
     this.x = random(0, width);
     this.y = random(-height, 0);
   }
@@ -21,13 +21,13 @@ class Rain {
   }
 
   update() {
-    // this.vel += this.gravity;
+    this.vel += this.gravity;
     this.y += this.vel;
   }
 
   dropped() {
     if (this.y > height) {
-      this.reset();
+      return true;
     }
   }
 }
