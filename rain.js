@@ -15,9 +15,10 @@ class Rain {
   }
 
   show() {
-    fill(255);
-    noStroke();
-    ellipse(this.x, this.y, this.r, this.r);
+    noFill();
+    strokeWeight(random(1,2));
+    stroke(255);
+    line(this.x, this.y, this.x, this.y-30);
   }
 
   update() {
