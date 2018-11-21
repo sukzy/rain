@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-	background(0, 90);
+	background(0);
 
 	for (let i = 0; i < rains.length; i++) {
 		rains[i].update();
