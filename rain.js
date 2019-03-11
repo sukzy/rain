@@ -8,12 +8,6 @@ class Rain {
     this.gravity = 0.3;
   }
 
-  reset() {
-    this.vel = 0;
-    this.x = random(0, width);
-    this.y = random(-height, 0);
-  }
-
   show() {
     noFill();
     strokeWeight(random(1,2));
